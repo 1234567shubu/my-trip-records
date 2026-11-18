@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-olive: #736936;
+  --color-rust: #bf3604;
+  --color-mist: #ebf2f2;
+  --color-mist-deep: #dfe8e8;
+  --color-clay: #d9a384;
+  --color-earth: #73412f;
+  --color-muted-earth: #80695d;
+  --color-hairline: #d3dddd;
+  --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; scroll-behavior: smooth; scroll-padding-top: 86px; }
+body { margin: 0; background: var(--color-mist); color: var(--color-earth); font-family: var(--font-body); font-size: 14px; -webkit-font-smoothing: antialiased; }
+button { color: inherit; font: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--color-clay); outline-offset: 4px; }
+::selection { background: var(--color-mist-deep); color: var(--color-olive); }
