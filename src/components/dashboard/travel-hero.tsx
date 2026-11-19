@@ -1,6 +1,7 @@
 import { Icon } from "./icons";
 
-const heroImage = "/heroImage2.jpg";
+const heroImage =
+  "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2400&q=90";
 
 export function TravelHero() {
   return (

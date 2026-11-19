@@ -2,11 +2,11 @@ import { trips } from "@/data/trips";
 
 export function JourneyTimeline() {
   return (
-    <section className="grid grid-cols-1 gap-6 bg-mist-deep px-5 py-[49px] sm:gap-[30px] sm:px-[clamp(25px,5vw,70px)] sm:py-16 sm:pb-[60px] min-[901px]:grid-cols-[minmax(220px,.72fr)_1.5fr] min-[901px]:gap-[clamp(35px,8vw,115px)]" id="journey-timeline" aria-labelledby="timeline-title">
+    <section className="grid grid-cols-1 gap-6 bg-mist-deep px-5 py-[49px] sm:gap-[30px] sm:px-[clamp(25px,5vw,70px)] sm:py-16 sm:pb-[60px] lg:grid-cols-[minmax(220px,.72fr)_1.5fr] lg:gap-[clamp(35px,8vw,115px)]" id="journey-timeline" aria-labelledby="timeline-title">
       <div className="pt-[11px]">
         <p className="mb-3 text-[9px] font-bold tracking-[1.9px] text-olive">A LIFE MEASURED IN PLACES</p>
-        <h2 id="timeline-title" className="m-0 font-display text-[40px] leading-[1.02] tracking-[-1.2px] text-olive sm:text-[clamp(36px,4vw,51px)]">Your journey<br className="hidden min-[901px]:block" /><em className="font-normal text-rust"> through the years.</em></h2>
-        <p className="mt-[17px] max-w-[420px] font-display text-[15px] leading-[1.65] text-[#7e8984] min-[901px]:max-w-[260px]">Not a list of places. A collection of little versions of you, out in the world.</p>
+        <h2 id="timeline-title" className="m-0 font-display text-[40px] leading-[1.02] tracking-[-1.2px] text-olive sm:text-[clamp(36px,4vw,51px)]">Your journey<br className="hidden lg:block" /><em className="font-normal text-rust"> through the years.</em></h2>
+        <p className="mt-[17px] max-w-[420px] font-display text-[15px] leading-[1.65] text-[#7e8984] lg:max-w-[260px]">Not a list of places. A collection of little versions of you, out in the world.</p>
       </div>
       <div className="relative before:absolute before:top-[14px] before:bottom-[14px] before:left-12 before:w-px before:bg-[#d5cebd] before:content-[''] sm:before:left-[56px]">
         {trips.map((trip) => (

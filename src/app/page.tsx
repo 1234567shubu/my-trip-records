@@ -15,7 +15,7 @@ export default function Home() {
         <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-[clamp(22px,6vw,86px)]">
           <RecentTrips />
           <JourneyTimeline />
-          <div className="grid grid-cols-1 items-center gap-7 py-[56px] sm:gap-[clamp(35px,8vw,112px)] sm:py-[83px] sm:pb-[78px] min-[901px]:grid-cols-[1.4fr_.8fr]">
+          <div className="grid grid-cols-1 items-center gap-7 py-[56px] sm:gap-[clamp(35px,8vw,112px)] sm:py-[83px] sm:pb-[78px] lg:grid-cols-[1.4fr_.8fr]">
             <TravelTogether />
             <TripExpenses />
           </div>
