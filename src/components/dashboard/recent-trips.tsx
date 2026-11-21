@@ -1,8 +1,10 @@
-import { trips } from "@/data/trips";
 import { Icon } from "./icons";
 import { TripCard } from "./trip-card";
+import { getItems } from "@/lib/items";
 
-export function RecentTrips() {
+export async function RecentTrips() {
+  const trips = await getItems();
+  console.log('trips:', trips)
   return (
     <section className="py-[60px] sm:py-[82px] sm:pb-[78px]" id="stories" aria-labelledby="stories-title">
       <div className="mb-[21px] flex flex-col items-start gap-[13px] sm:mb-[30px] sm:flex-row sm:items-end sm:justify-between sm:gap-[25px]">

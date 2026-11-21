@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "./icons";
 
 const heroImage =
@@ -11,7 +12,7 @@ export function TravelHero() {
         <p className="mb-[21px] flex items-center gap-[10px] text-[9px] font-bold tracking-[2.1px] text-[#f4e5dc] max-[640px]:mb-[15px] max-[640px]:text-[8px]"><span className="h-px w-6 bg-clay" /> YOUR NEXT STORY IS OUT THERE</p>
         <h1 id="hero-title" className="m-0 max-w-[740px] text-balance font-display text-[clamp(54px,7vw,92px)] leading-[.99] tracking-[-3px] text-mist max-[640px]:text-[clamp(52px,13vw,73px)] max-[640px]:tracking-[-2.3px]">Collect moments,<br /><em className="font-normal text-clay">not just miles.</em></h1>
         <p className="my-[22px] mb-[26px] max-w-[430px] text-sm leading-[1.8] text-[#f3f4f0] max-[640px]:my-[15px] max-[640px]:mb-5 max-[640px]:max-w-[340px] max-[640px]:text-xs">The winding roads, the long dinners, the people you meet along the way. Keep the good parts close.</p>
-        <a className="inline-flex items-center gap-[18px] rounded-[3px] border border-white/50 bg-white/95 px-[17px] py-[14px] text-[11px] font-bold text-olive transition-[background,gap] hover:gap-6 hover:bg-white" href="#next-adventure">Plan Your Next Trip <Icon className="text-rust" name="arrow" size={17} /></a>
+        <Link className="inline-flex items-center gap-[18px] rounded-[3px] border border-white/50 bg-white/95 px-[17px] py-[14px] text-[11px] font-bold text-olive transition-[background,gap] hover:gap-6 hover:bg-white" href="/create-trip" >Plan Your Next Trip <Icon className="text-rust" name="arrow" size={17} /></Link>
         <div className="absolute bottom-[33px] left-[clamp(22px,9vw,130px)] flex items-center gap-[10px] font-display text-[13px] italic text-[#f3efe6] max-[640px]:bottom-[27px] max-[640px]:left-[22px] max-[640px]:text-[11px]"><span className="h-px w-[21px] bg-clay" /> Somewhere worth remembering <span className="ml-[17px] font-body text-[8px] not-italic tracking-[1.2px] text-white/70 max-[640px]:hidden">46° 28′ N&nbsp; · &nbsp;9° 49′ E</span></div>
       </div>
       <div className="absolute right-[clamp(22px,6vw,86px)] bottom-9 z-[1] flex items-center gap-[9px] text-[8px] tracking-[1.4px] text-white/80 max-[640px]:hidden"><span className="font-display text-[15px] text-clay">01</span><i className="h-px w-[25px] bg-white/50" /> A JOURNAL FOR THE JOURNEY</div>

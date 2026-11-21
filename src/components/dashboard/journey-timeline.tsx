@@ -9,12 +9,12 @@ export function JourneyTimeline() {
         <p className="mt-[17px] max-w-[420px] font-display text-[15px] leading-[1.65] text-[#7e8984] lg:max-w-[260px]">Not a list of places. A collection of little versions of you, out in the world.</p>
       </div>
       <div className="relative before:absolute before:top-[14px] before:bottom-[14px] before:left-12 before:w-px before:bg-[#d5cebd] before:content-[''] sm:before:left-[56px]">
-        {trips.map((trip) => (
-          <article className="relative grid grid-cols-[98px_1fr] gap-[5px] pb-[17px] sm:grid-cols-[114px_1fr] sm:gap-[13px] sm:pb-[23px]" key={trip.year}>
-            <div className="relative z-[1] flex items-start gap-3 pt-[7px] font-display text-[17px] text-[#8e794e] sm:gap-[17px] sm:text-[19px]"><span>{trip.year}</span><i className="mt-[5px] size-[9px] rounded-full border-2 border-mist-deep bg-rust shadow-[0_0_0_1px_#8daeb5]" /></div>
+        {trips.map((trip, index) => (
+          <article key = {`${index}_${trip?.place}`} className="relative grid grid-cols-[98px_1fr] gap-[5px] pb-[17px] sm:grid-cols-[114px_1fr] sm:gap-[13px] sm:pb-[23px]">
+            <div className="relative z-[1] flex items-start gap-3 pt-[7px] font-display text-[17px] text-[#8e794e] sm:gap-[17px] sm:text-[19px]"><span>{trip.startDate}</span><i className="mt-[5px] size-[9px] rounded-full border-2 border-mist-deep bg-rust shadow-[0_0_0_1px_#8daeb5]" /></div>
             <div className="flex min-w-0 items-center gap-[10px] bg-mist p-2 sm:gap-[15px] sm:px-[14px] sm:py-[10px]">
               <div className="h-[59px] w-16 shrink-0 bg-cover bg-center sm:h-[65px] sm:w-[82px]" role="img" aria-label={trip.imageAlt} style={{ backgroundImage: `url('${trip.image}')` }} />
-              <div className="min-w-0"><p className="mb-1 text-[8px] text-[#8a9a98] sm:text-[9px]">{trip.country}</p><h3 className="m-0 overflow-hidden text-ellipsis whitespace-nowrap font-display text-[15px] leading-[1.2] text-olive sm:text-lg">{trip.place}</h3><span className="mt-[5px] block text-[7px] text-[#9ba09a] sm:text-[8px]">{trip.dates}</span></div>
+              <div className="min-w-0"><p className="mb-1 text-[8px] text-[#8a9a98] sm:text-[9px]">{trip.country}</p><h3 className="m-0 overflow-hidden text-ellipsis whitespace-nowrap font-display text-[15px] leading-[1.2] text-olive sm:text-lg">{trip.place}</h3><span className="mt-[5px] block text-[7px] text-[#9ba09a] sm:text-[8px]">{trip.startDate}-{trip.endDate}</span></div>
             </div>
           </article>
         ))}

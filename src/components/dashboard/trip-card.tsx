@@ -22,7 +22,7 @@ export function TripCard({trip, index=0} : TripCardProps) {
         <div className="absolute inset-x-4 bottom-4 flex items-end justify-between text-white">
           <div>
             <p className="mb-2 text-[9px] font-bold tracking-[1.8px] text-clay">
-              {trip.country} · {trip.year}
+              {trip.country} · {trip.place}
             </p>
             <h2 className="font-display text-2xl leading-tight">{trip.place}</h2>
           </div>
@@ -31,12 +31,12 @@ export function TripCard({trip, index=0} : TripCardProps) {
       </div>
 
       <div className="p-5">
-        <p className="mb-2 text-[10px] tracking-wide text-muted-earth">{trip.dates}</p>
+        <p className="mb-2 text-[10px] tracking-wide text-muted-earth">{trip.startDate}</p>
         <p className="text-sm leading-relaxed text-muted-earth">{trip.description}</p>
 
         <div className="mt-5 flex items-center justify-between border-t border-hairline pt-4 text-[11px]">
           <span className="text-muted-earth">
-            {trip.companions.length} {trip.companions.length === 1 ? "traveler" : "travelers"}
+            {trip.companions?.length} {trip.companions?.length === 1 ? "traveler" : "travelers"}
             <span className="mx-2 text-clay">·</span>
             {trip.spent}
           </span>
