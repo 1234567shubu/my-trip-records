@@ -36,9 +36,9 @@ export function TripCard({trip, index=0} : TripCardProps) {
 
         <div className="mt-5 flex items-center justify-between border-t border-hairline pt-4 text-[11px]">
           <span className="text-muted-earth">
-            {trip.companions?.length} {trip.companions?.length === 1 ? "traveler" : "travelers"}
+            {trip.companions?.length ?? 0} {(trip.companions?.length ?? 0) === 1 ? "traveler" : "travelers"}
             <span className="mx-2 text-clay">·</span>
-            {trip.spent}
+            {trip.spent || "Not added"}
           </span>
           <a className="font-semibold text-rust transition-colors hover:text-olive" href="#journey-timeline">
             View trip <span aria-hidden="true">→</span>

@@ -11,6 +11,21 @@ export const tripCreateSchema = z
       .trim()
       .min(1, "Description is required")
       .max(2000),
+    companions: z
+      .string()
+      .trim()
+      .max(500, "Companions must be 500 characters or fewer")
+      .transform((value) =>
+        value
+          .split(",")
+          .map((name) => name.trim())
+          .filter(Boolean),
+      ),
+    spent: z
+      .string()
+      .trim()
+      .min(1, "Total spent is required")
+      .max(40, "Total spent must be 40 characters or fewer"),
     image: z
       .union([z.httpUrl(), z.literal("")])
       .optional()
