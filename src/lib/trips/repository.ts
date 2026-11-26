@@ -1,9 +1,10 @@
 import clientPromise from "@/lib/mongodb";
-import type { ValidatedTripInput } from "./schema"
+import type { TripExpense, ValidatedTripInput } from "./schema";
 
-export type TripDocument = ValidatedTripInput & {
+export type TripDocument = Omit<ValidatedTripInput, "expenses"> & {
     createdBy: string;
     createdAt: Date;
+    expenses?: TripExpense[];
 }
 export async function createTrip(trip: ValidatedTripInput, creatorId: string) {
     const client = await clientPromise;

@@ -1,27 +1,43 @@
-export type Trip = {
-  place: string;
-  country: string;
-  startDate: string;
-  endDate: string;
-  companions: string[];
-  image: string;
-  imageAlt: string;
-  spent: string;
-  description: string;
-};
+import type { TripExpense } from "@/lib/trips/schema";
 
-export const trips: Trip[] = [
+export const trips = [
   {
     place: "The quiet side of Kyoto",
     country: "Kyoto, Japan",
     startDate: "Oct 12 – 19, 2026",
     endDate: "Oct 12 – 19, 2026",
-    companions: ["A", "M", "S"],
+    companions: ["Ashok", "Mugdha", "Swati"],
     image:
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85",
     imageAlt: "Traditional Kyoto street framed by autumn leaves",
     spent: "$1,240",
     description: "Lantern-lit lanes, tiny tea houses, and one very long walk beneath the maples.",
+    expenses: [
+      {
+        id: "kyoto-lunch-2026-10-12",
+        title: "Lunch at Nishiki Market",
+        amount: 1000,
+        note: "Split with 3 travelers",
+        payer: "Ashok",
+        date: "2026-10-12",
+      },
+      {
+        id: "kyoto-dinner-2026-10-13",
+        title: "Dinner near the river",
+        amount: 2800,
+        note: "Split with 3 travelers",
+        payer: "Mugdha",
+        date: "2026-10-13",
+      },
+      {
+        id: "kyoto-taxi-2026-10-14",
+        title: "Taxi ride to Arashiyama",
+        amount: 1500,
+        note: "Split with 2 travelers",
+        payer: "Swati",
+        date: "2026-10-14",
+      },
+    ] satisfies TripExpense[],
   },
   {
     place: "A week in the Dolomites",

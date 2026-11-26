@@ -1,7 +1,9 @@
-import type { Trip } from "@/data/trips";
+import type { WithId } from "mongodb";
+import type { TripDocument } from "@/lib/trips/repository";
+import Link from "next/link";
 
 type TripCardProps = {
-  trip: Trip;
+  trip: WithId<TripDocument>;
   index?: number;
 };
 
@@ -40,9 +42,9 @@ export function TripCard({trip, index=0} : TripCardProps) {
             <span className="mx-2 text-clay">·</span>
             {trip.spent || "Not added"}
           </span>
-          <a className="font-semibold text-rust transition-colors hover:text-olive" href="#journey-timeline">
+          <Link className="font-semibold text-rust transition-colors hover:text-olive" href={`/trips/${trip._id}`}>
             View trip <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </article>
