@@ -1,7 +1,7 @@
 "use server";
 
 import { createTrip } from "@/lib/trips/repository";
-import { tripCreateSchema } from "@/lib/trips/schema";
+import { parseTripFormData } from "@/lib/trips/form-data";
 import { redirect } from "next/navigation";
 
 export type TripFormState = {
@@ -13,9 +13,12 @@ export async function createTripAction(
     _previousState: TripFormState,
     formData: FormData,
 ): Promise<TripFormState> {
-    const result = tripCreateSchema.safeParse(
-        Object.fromEntries(formData),
-    );
+    const result = parseTripFormData(formData);
+    if (!result) {
+        return {
+            message: "Expenses could not be read. Please review them and try again.",
+        };
+    }
 
     if (!result.success) {
         return {

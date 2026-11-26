@@ -3,6 +3,7 @@ import { Navigation } from "@/components/dashboard/navigation";
 import { getTripDetails } from "@/lib/items";
 import { ObjectId } from "mongodb";
 import { notFound } from "next/navigation";
+import { DeleteTripButton } from "@/components/trips/delete-trip-button";
 
 // Keep the page backed by mock data for this first version.
 // The separate ISO dates let us calculate a trip duration.
@@ -65,6 +66,15 @@ export default async function TripDetailsPage({
             <span aria-hidden="true">←</span>
             All trips
           </Link>
+          <div className="mb-5 flex flex-wrap justify-end gap-3">
+            <Link
+              className="rounded-md border border-olive px-4 py-2 text-sm font-semibold text-olive transition hover:bg-mist-deep"
+              href={`/trips/${tripId}/edit`}
+            >
+              Edit trip
+            </Link>
+            <DeleteTripButton tripId={tripId} />
+          </div>
 
           <article>
             <header
